@@ -1,0 +1,623 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{tgtermes}
+
+\usepackage[
+pdftitle={Math Assignment}, 
+pdfauthor={Lucas Varela, Universidad de los Andes},
+colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,bookmarks=true,
+bookmarksopenlevel=2]{hyperref}
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{total={210mm,297mm},
+left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.0}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+    {1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+    {{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+
+\theoremstyle{mytheor}
+\newtheorem{defi}{Definition}
+
+% my own titles
+\makeatletter
+\renewcommand{\maketitle}{
+\begin{center}
+\vspace{2ex}
+{\huge \textsc{\@title}}
+\vspace{1ex}
+\\
+\linia\\
+\@author \hfill \@date
+\vspace{4ex}
+\end{center}
+}
+\makeatother
+%%%
+
+% custom footers and headers
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{Centroides y momentos de inercia}
+\cfoot{}
+\rfoot{Page \thepage\ /\ \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%
+
+%%%----------%%%----------%%%----------%%%----------%%%
+
+\begin{document}
+
+\title{ Centros de Masa \& Momentos de Inercia}
+
+\author{Complementaria de Física I}
+
+\date{ Universidad de los Andes}
+
+\maketitle
+
+\section{Centros de Masa}
+
+\textbf{Partículas puntuales:}
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{masaspuntuales}
+	\label{fcN4}
+\end{figure}
+
+El centro de masa para un sistema discreto de $N$ partículas puntuales  está dado por:
+
+$$ \vec{r}_{cm} = \frac{1}{M_{T}}\sum_{k=1}^{N} m_k \vec{r}_k = \frac{m_1\vec{r}_1 + \dots + m_N \vec{r}_N}{m_1 + \dots + m_N}$$
+
+
+Donde $ \vec{r}_k$ es la posición de la k-ésima partícula y $m_k$ su masa. $M_T$ es la suma de todas las masas.\\
+
+\textbf{Distribución continua:}
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{3d}
+	\label{fcN4}
+\end{figure}
+
+El centro de masa de un objeto con distribución de masa continua viene dado por la siguiente integral:
+
+$$  \vec{r}_{cm} = \frac{1}{M_T} \int \vec{r} dm $$
+
+Donde $M_T$ es la masa total del objeto. Existen tres casos a considerar: objetos de 1, 2 y 3 dimensiones. Para cada una respectivamente existe una densidad asociada:
+
+\begin{align*}
+\lambda &= \frac{d m}{dx} \\
+\sigma &= \frac{d m}{dA} \\
+\rho &= \frac{d m}{dV} 
+\end{align*}
+
+Donde $\lambda$ es la densidad lineal, $\sigma$ la densidad superficial y $\rho$ la densidad (se omite decir densidad volumétrica, se le dice solo densidad usualmente). Con ellas se puede obtener las siguientes expresiones para el centro de masa de distribuciones continuas:
+
+\begin{align*}
+\vec{r}_{cm} &= \frac{1}{M_T} \int \vec{r} \lambda \;dx  \\
+\vec{r}_{cm} &= \frac{1}{M_T} \int \vec{r} \sigma \;dA \\
+\vec{r}_{cm} &= \frac{1}{M_T} \int \vec{r} \rho\; dV 
+\end{align*}
+
+
+\textbf{Sistema de múltiples distribuciones continuas:}\\
+
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{muchos3d}
+	\label{fcN4}
+\end{figure}
+El centro de masa para un sistema de $N$ objetos de distribución continua está dado por:
+
+$$ \vec{r}_{cm} = \frac{1}{M_{T}}\sum_{k=1}^{N} m_k \vec{r}_k = \frac{m_1\vec{r}_1 + \dots + m_N \vec{r}_N}{m_1 + \dots + m_N}$$
+
+
+Donde $ \vec{r}_k$ es el centro de masa de el k-ésimo elemento y $m_k$ su masa. $M_T$ es la suma de todas las masas.
+
+
+\subsection{Lamina de densidad uniforme} 
+
+Se quiere encontrar la posición del centro de masa de la lamina mostrada en la figura. La masa total
+de la lamina está repartida de manera uniforme en toda su superficie. 
+\begin{figure}[h]
+	\includegraphics[width=0.7\linewidth]{4}
+	\label{fcN4}
+\end{figure}
+
+
+Para ello se utiliza la siguiente estrategia: se encuentra el centro de masa de dos rectángulos.
+
+\begin{figure}[h]
+	\includegraphics[width=0.7\linewidth]{recdiv}
+	\label{fcN4}
+\end{figure}
+
+Ahora, el centro de masa de cada rectángulo con respecto a ejes que estén en sus respectivos vértices inferiores izquierdos(ver figura) corresponde a la mitad de la altura y la mitad del ancho de cada uno.
+
+\begin{figure}[h]
+	\includegraphics[width=0.7\linewidth]{vert}
+	\label{fcN4}
+\end{figure}
+
+Entonces el del rectangulo azul es:
+
+$$ \vec{r}_a = \frac{b-d}{2} \hat{i} + \frac{a}{2} \vec{j}  $$
+
+El del rectangulo verde con respecto a las coordenadas rojas es:
+
+\color{red}
+
+$$ \vec{r}_v = \frac{d}{2} \hat{i} + \frac{c}{2}\hat{j}$$
+
+\color{black}
+Ahora queremos saber estas posiciones con respecto al mismo sistema de coordenadas. Vemos que las coordenadas rojas estan relacionadas a las coordenadas negras sumando el vector $(b-d) \hat{i}$. Por lo tanto la coordenada de centro de masa del rectangulo verde en el sistema de coordenadas negro es:
+
+$$ \vec{r}_v = \color{red} \vec{r}_v \color{black}+ (b-d)\hat{i}$$
+
+Es decir:
+
+\begin{align*}
+ \vec{r}_v &= \frac{d}{2} \hat{i} + \frac{c}{2}\hat{j} +  (b-d)\hat{i}\\
+ &=  \frac{2b-d}{2}\hat{i} + \frac{c}{2}\hat{j} 
+\end{align*}
+
+
+Ahora el centro de masa de la figura entera esta dado por:
+
+$$ \vec{r}_{cm} = \frac{ M_v \vec{r}_v+ M_a \vec{r}_a}{M_v + M_a}$$
+
+Donde $M_v$ y $M_a$ son las masas de los rectángulos verde y azul respectivamente. Como sabemos que la densidad es uniforme, sabemos que ambos rectangulos tienen la misma densidad superficial $\sigma$. Por lo tanto se cumple que:
+
+\begin{align*}
+M_v &= \sigma A_v\\
+M_a &= \sigma A_a
+\end{align*}
+
+Donde $A_v$ y $A_a$ son las áreas de los rectangulos verde y azul respectivamente. Por lo tanto el centro de masa esta dado por:
+
+
+\begin{align*}
+ \vec{r}_{cm} &= \frac{ \sigma A_v \vec{r}_v+ \sigma A_a \vec{r}_a}{\sigma A_v + \sigma A_a} \\
+ & = \frac{  A_v \vec{r}_v+  A_a \vec{r}_a}{ A_v +  A_a}
+\end{align*}
+
+
+Las áreas respectivas son:
+
+\begin{align*}
+A_v & = dc\\
+A_a & = (b-d)a
+\end{align*}
+
+Por lo que el centro de masa se convierte en:
+
+\begin{align*}
+\vec{r}_{cm}  &= \frac{  dc \vec{r}_v+  (b-d)a \vec{r}_a}{ dc + (b-d)a}\\
+&= \frac{  dc ( \frac{2b-d}{2}\hat{i} + \frac{c}{2}\hat{j})+  (b-d)a (\frac{b-d}{2} \hat{i} + \frac{a}{2} \vec{j})}{ dc + (b-d)a}\\
+& =\frac{1}{2} \frac{  ((2db-d^2)c +a(b-d)^2) \hat{i} + (dc^2+(b-d)a^2)\hat{j}}{ dc + (b-d)a}\\
+& = \frac{1}{2} \frac{   ((2db-d^2)c +a(b-d)^2) \hat{i} + (dc^2+ba^2-da^2)\hat{j}}{ dc + (b-d)a}
+\end{align*}
+
+Es decir:
+
+
+\begin{align*}
+X_{cm}  &= \frac{1}{2} \frac{   (2db-d^2)c +a(b-d)^2 }{ dc + (b-d)a}\\
+Y_{cm}&= \frac{1}{2} \frac{   (dc^2+ba^2-da^2)\hat{j}}{ dc + (b-d)a}\\
+\end{align*}
+
+\section{Momentos de inercia}
+
+
+\textbf{Partículas puntuales:}
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.4\linewidth]{rot1}
+	\caption{Eje negro y las distancias en morado de las partículas al eje.}
+	\label{fcN4}
+\end{figure}
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{rot2}
+	\caption{Eje negro y las distancias en morado de las partículas al eje.}
+	\label{fcN4}
+\end{figure}
+El momento de inercia con respecto a un eje de rotación para un sistema discreto de $N$ partículas puntuales  está dado por:
+
+$$ I = \sum_{k=1}^{N} m_k r_k^2 = m_1 r_1^2 + \dots + m_N r_N^2$$
+
+
+Donde $ r_k$ es la distancia de la k-ésima partícula al eje y $m_k$ su masa. \\
+
+\textbf{Distribución continua:}
+
+\begin{figure}[h]
+	\includegraphics[width=0.4\linewidth]{3d}
+	\label{fcN4}
+\end{figure}
+
+El momento de inercia con respecto a un eje de rotación de un objeto con distribución de masa continua viene dado por la siguiente integral:
+
+$$  I=  \int r^2 dm $$
+
+Existen tres casos a considerar: objetos de 1, 2 y 3 dimensiones. Para cada una respectivamente existe una densidad asociada:
+
+\begin{align*}
+\lambda &= \frac{d m}{dx} \\
+\sigma &= \frac{d m}{dA} \\
+\rho &= \frac{d m}{dV} 
+\end{align*}
+
+Donde $\lambda$ es la densidad lineal, $\sigma$ la densidad superficial y $\rho$ la densidad (se omite decir densidad volumétrica, se le dice solo densidad usualmente). Con ellas se puede obtener las siguientes expresiones para el centro de masa de distribuciones continuas:
+
+\begin{align*}
+I &=  \int r^2 \lambda \;dx  \\
+I &=  \int r^2 \sigma \;dA \\
+I &=  \int r^2 \rho\; dV 
+\end{align*}
+
+
+\subsection{Anillo de densidad uniforme}
+
+\begin{figure}[hh]
+	\includegraphics[width=0.4\linewidth]{anillo1}
+	\label{fcN4}
+\end{figure}
+
+Para calcular el momento de inercia de un anillo con respecto a un eje que pasa por el centro del anillo, perpendicular al plano donde este se encuentra, se debe hacer la siguiente integral:
+
+$$ I = \int r^2 dm$$
+
+
+
+
+El elemento de masa lo podemos expresar en términos del "volumen"(entre comillas ya que como el anillo es una figura de 1D, se considera su longitud y no volumen):
+
+$$ dm = \lambda dr $$
+
+Donde $\lambda$ es la densidad lineal dada por:
+
+$$ \lambda = \frac{M}{2 \pi R } $$
+
+\begin{figure}[hh]
+	\includegraphics[width=0.4\linewidth]{anillo2}
+	\label{fcN4}
+\end{figure}
+
+Y $dr$ es la posición del segmento infinitesimal del anillo que se está integrando. Como la posición de los segmentos siempre está a una distancia fija, esta posición se puede escribir en términos de un ángulo como:
+
+$$ dr = R d\theta$$
+
+Para recorrer todo el anillo, se debe dar una vuelta entera. Es decir $\theta$ va desde 0 hasta $2\pi$. Esto define los limites de la integral. Además se nota que la distancia desde el eje de rotación hasta cualquier parte del anillo siempre es $r=R$, por lo que se tiene:
+
+
+$$ I = \int^{2\pi}_{0} \lambda  R^2 R d\theta$$
+
+Como $\lambda$ y $R$ son constantes salen de la integral y se tiene:
+
+$$ I = R^3 \lambda \int_{0}^{2\pi} d\theta = R^3 \lambda 2\pi = m R^2 $$
+
+\subsection{Disco de densidad uniforme}
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{disc1}
+	\label{fcN4}
+\end{figure}
+
+Se va a calcular el momento de inercia de un disco de masa $M$ distribuida uniforme. Este momento de inercia sera con respecto al eje que atraviesa el disco por el centro de masa (el centro) y perpendicular al plano del disco.
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{disc2}
+	\label{fcN4}
+\end{figure}
+
+
+Para calcular el momento de inercia del disco vamos a dividir el disco en anillos y sumar la contribución de cada anillo. Estos anillos tiene un grosor infinitesimal $dy$. Ya vimos que el momento de inercia de un anillo es:
+
+$$ dI =  r^2 dm_a $$
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{disc3}
+	\label{fcN4}
+\end{figure}
+
+Donde $dm_a$ es la masa de cada anillo que vamos a sumar y $r$ el radio de cada anillo. La integral se encarga de sumar cada anillo con grosor infinitesimal. Por lo tanto el momento de inercia esta dado por:
+
+
+$$ I = \int d I  = \int r^2 dm_a $$
+
+Para integrar cambiamos $dm_a$ usando la siguiente relación:
+
+
+$$ dm_a = \sigma dA$$
+
+Donde $dA$ es el área de cada anillo infinitesimal. Vemos que el área de cada anillo esta dado por la longitud del anillo por el grosor del anillo, es decir:
+
+$$ dA = L dx = 2 \pi r d r$$
+
+ Juntando estos resultados el momento de inercia está dado por la siguiente expresión:
+ 
+$$ I = \int \sigma r^2 2 \pi r dx$$
+
+
+
+Recordando que la integral suma sobre todos los anillos, tenemos que variar $r$ desde el origen hasta el extremo del disco. Es decir que $r$ debe ir desde $0$ hasta $R$. Estos son entonces los limites de la integral:
+
+
+$$ I =  \int_{0}^{R} \sigma 2\pi   r^3 dr$$
+
+Como $\sigma$ y $2\pi$ son constantes, salen de la integral y se tiene:
+
+$$ I =  2\pi\sigma \int_{0}^{R}    r^3 dr$$
+
+Esta integral es:
+
+
+
+$$ I =  2\pi\sigma \left( \frac{1}{4} R^4\right)$$
+
+La densidad superficial $\sigma$ es:
+
+$$ \sigma = \frac{m}{A} = \frac{m}{\pi R^2} $$
+
+
+Por lo que el momento de inercia termina siendo:
+
+$$ I = \frac{1}{2} m R^2$$
+
+
+\subsection{Cilindro de densidad uniforme}
+
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{cilindro1}
+	\label{fcN4}
+\end{figure}
+
+Se va a calcular el momento de inercia de un cilindro de masa $M$ distribuida uniforme. Este momento de inercia se calcula con respecto a un eje que atraviesa el cilindro por el centro de masa (el centro) y perpendicular a las caras circulares del cilindro.
+
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{cilindro2}
+	\label{fcN4}
+\end{figure}
+
+Para calcular el momento de inercia del disco vamos a dividir el cilindro en discos y sumar la contribución de cada disco. Estos discos tienen un grosor infinitesimal $dy$. Ya vimos que el momento de inercia de un disco es:
+
+$$ dI = \frac{1}{2} r^2 dm_d $$
+
+Donde $dm_d$ es la masa de cada disco que vamos a sumar y $r$ el radio de cada disco. Como es un cilindro todos los discos tienen el mismo radio $R$. La integral se encarga de sumar cada disco con grosor infinitesimal. Por lo tanto el momento de inercia esta dado por:
+
+
+$$ I = \int d I  = \frac{1}{2} \int R^2 dm_a $$
+
+Como $R$ es una constante sale de la integral y se tiene:
+
+$$ I = \frac{1}{2} R^2 \int dm_a$$
+
+La integral $\int dm_a$ es la suma de la masa de todos los anillos, la cual es la masa total del cilindro $M$. Por lo tanto el momento de inercia es:
+
+$$ I = \frac{1}{2} M R^2$$
+
+Es el mismo que el del disco, solo que con la masa del cilindro. 
+
+
+\subsection{Bola de densidad uniforme}
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\linewidth]{bola1}
+	\caption{Bola y eje de rotación}
+	\label{fcN4}
+\end{figure}
+
+Se va a calcular el momento de inercia de una bola de densidad uniforme con respecto a un eje que pasa por el centro de masa (el centro) de la bola.
+
+
+\begin{figure}[h]
+	\includegraphics[width=1\linewidth]{bola}
+	\caption{Descomposición de bola en cilindros}
+	\label{fcN4}
+\end{figure}
+
+Para calcular el momento de inercia de una bola vamos a dividir la bola en cilindros y sumar la contribución de cada cilindro. Estos cilindros tiene un grosor infinitesimal $dy$. Ya vimos que el momento de inercia de un cilindro es:
+
+$$ dI = \frac{1}{2} r^2 dm_c $$
+
+Donde $dm_c$ es la masa de cada cilindro que vamos a sumar y $r$ el radio de cada cilindro. La integral se encarga de sumar cada cilindro infinitesimal. Por lo tanto el momento de inercia esta dado por:
+
+$$ I = \int d I  = \frac{1}{2}\int r^2 dm_c $$
+
+
+
+
+ Para integrar cambiamos $dm_c$ usando la siguiente relación:
+
+
+$$ dm_c = \rho dV$$
+
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.7\linewidth]{elmentovolbola}
+	\caption{Cilindro infinitesimal}
+	\label{fcN4}
+\end{figure}
+
+Donde $dV$ es el volumen de cada cilindro infinitesimal. Vemos que el volumen de cada cilindro esta dado por el área del disco por el grosor cilindro, es decir:
+
+$$ dV = A dy = \pi r^2 d y$$
+
+ Juntando estos resultados el momento de inercia está dado por la siguiente expresión:
+ 
+ $$ I = \frac{1}{2} \int \rho r^2 \pi r^2 dy$$
+
+Ahora, para poder integrar esta expresión, tenemos que encontrar como depende el radio de los cilindros en función de la altura $y$. Usando el teorema de Pitágoras tenemos que:
+
+$$ r^2 = R^2 - y^2$$
+
+Por lo tanto el momento de inercia está dado por:
+
+ $$ I = \frac{1}{2} \int \rho \pi   (R^2-y^2)^2 dy$$
+
+Recordando que la integral suma sobre todos los cilindros, tenemos que variar $y$ desde la parte inferior de la bola hasta la superior. Es decir que $y$ debe ir desde $-R$ hasta $R$. Estos son entonces los limites de la integral:
+
+
+$$ I = \frac{1}{2} \int_{-R}^{R} \rho \pi   (R^2-y^2)^2 dy$$
+
+Ahora lo único que resta es hacer la integral. Primero, notamos que como la densidad y el número $\pi$ son constantes (no depende de $y$), salen de la integral:
+
+
+$$ I = \frac{1}{2} \rho \pi \int_{-R}^{R}    (R^2-y^2)^2 dy$$
+
+Ahora simplificando la expresión $(R^2-y^2)^2$:
+
+$$ (R^2-y^2)^2 = R^4 -2 R^2 y^2 + y^4$$
+
+Por lo que:
+
+
+$$ I = \frac{1}{2} \rho \pi \int_{-R}^{R}  R^4 -2 R^2 y^2 + y^4   dy$$
+
+Ahora usamos la propiedad de que la integral de una suma es la suma de las integrales:
+$$ I = \frac{1}{2} \rho \pi \left(  R^4\int_{-R}^{R} dy -2 R^2 \int_{-R}^{R} y^2 dy + \int_{-R}^{R}y^4   dy\right)$$
+
+La integral de un monomio esta dada por:
+
+$$ \int_{a}^{b} x^{n} dx = \left.\frac{x^{n+1}}{n+1}\right|_{a}^{b} = \frac{b^{n+1}}{n+1} - \frac{a^{n+1}}{n+1}$$
+
+
+Por lo que el momento de inercia es:
+
+
+\begin{align*}
+I &= \frac{1}{2} \rho \pi \left(  R^4(R-(-R))  -2 R^2 \left( \frac{R^3}{3}-\frac{(-R)^3}{3}\right)  + \left( \frac{R^5}{5}-\frac{(-R)^5}{5}\right)\right) \\
+I  &=\frac{1}{2} \rho \pi \left(  2R^5 -2 R^5 \frac{2}{3}  + R^5 \frac{2}{5}\right)\\
+I & = \frac{1}{2} \rho \pi R^5 \frac{16}{15}\\
+I & = \frac{8}{15} \rho \pi R^5
+\end{align*} 
+
+La densidad de una bola es:
+
+$$ \rho = \frac{M}{V} = \frac{M}{
+	\frac{4}{3} \pi R^3}$$
+
+Por lo que finalmente se tiene que el momento de inercia de una bola es:
+
+$$ I= \frac{8}{15} \frac{M}{
+	\frac{4}{3} \pi R^3} \pi R^5 =  \frac{2}{5} M R^2$$
+
+
+Calcule el momento de inercia de un disco con distribución de masa uniforme de radio $R$ con respecto al eje perpendicular al disco que pasa por su centro de masa. 
+
+
+
+
+\section{Teorema de ejes paralelos}
+
+El teorema de ejes paralelos da un formula para calcular el momento de inercia de un sistema con respecto a un eje de rotación que este paralelo a otro eje de rotación que pase por el centro de masa del objeto. Si $I_{cm}$ es el momento de inercia con respecto al eje que pasa por el centro de masa, y $a$ es la distancia entre dichos ejes se tiene que el momento de inercia del eje paralelo viene dado por:
+
+ $$ I_{a} = I_{cm} + M a^2$$
+
+
+\subsection{Barra con eje en un extremo}
+
+\begin{figure}[h]
+	\includegraphics[width=0.4\linewidth]{paralelobarra}
+	\label{fcN4}
+\end{figure}
+
+El eje de la barra se encuentra a una distancia $L/2$ de un eje que es paralelo y pasa por el centro de masa. Por lo que por el teorema de ejes paralelos se tiene que el momento de inercia esta dado por la siguiente expresión:
+
+$$ I = I_{cm} + m \left(\frac{L}{2}\right)^2$$
+
+
+
+El momento con respecto al eje que pasa por el centro de masa es $I_{cm} =\frac{1}{12} m L^2$. Entonces el momento de inercia es:
+
+$$ I = \frac{1}{3} m L^2$$
+
+\subsection{Bola con eje en un extremo}
+
+\begin{figure}[h]
+	\includegraphics[width=0.4\linewidth]{paralelobola}
+	\label{fcN4}
+\end{figure}
+
+El eje de la bola se encuentra a una distancia $R$ de un eje que es paralelo y pasa por el centro de masa. Por lo que por el teorema de ejes paralelos se tiene que el momento de inercia esta dado por la siguiente expresión:
+
+$$ I = I_{cm} + m R^2$$
+
+El momento con respecto al eje que pasa por el centro de masa es $I_{cm} =\frac{2}{5} m R^2$. Entonces el momento de inercia es:
+
+$$ I = \frac{7}{5} m R^2$$
+
+
+
+\subsection{Discos}
+
+
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.4\linewidth]{parelelodiscos}
+	\label{fcN4}
+\end{figure}
+
+
+En este ejemplo se tiene 5 discos de masa $m$ distribuida uniforme y todos con mismo radio. Se quiere encontrar el momento de inercia con respecto a un eje que atraviesa el disco central por justo en el centro. Para hacerlo sumamos el momento de inercia de los 5 discos con respecto a dicho eje. Es decir:
+
+$$ I = I_1 + I_2 + I_3 + I_4 + I_5$$
+
+Donde se $I_k$ es el momento de inercia del k-ésimo disco. En el siguiente dibujo se muestra como se enumeraron los discos.
+\begin{figure}[h]
+	\includegraphics[width=0.6\linewidth]{numerados}
+	\label{fcN4}
+\end{figure}
+
+El momento del primer disco es el de un disco con el eje que pasa por el centro de masa y es $I_1 = 1/2 m R^2$. El eje está paralelo al eje que pasa por el centro de masa del disco 2, con una distancia entre ejes de $2R$. Por lo que por el teorema de ejes paralelos:
+
+$$ I_2 = I_{cm}  + m(2R)^2 = \frac{1}{2} mR^2 + 4 mR^2 = \frac{9}{2} m R^2$$
+
+Para el disco 3,4 y 5 se tiene lo mismo, por lo que:
+
+\begin{align*}
+I &= I_1 + 4 I_2 \\
+&= \frac{1}{2} mR^2 + 4 \left(\frac{9}{2} m R^2\right)\\
+& = \frac{37}{2} m R^2 
+\end{align*}
+
+
+
+\end{document}

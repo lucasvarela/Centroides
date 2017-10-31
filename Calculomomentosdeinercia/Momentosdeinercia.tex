@@ -24,7 +24,6 @@ bookmarksopenlevel=2]{hyperref}
 left=25mm,right=25mm,%
 bindingoffset=0mm, top=20mm,bottom=20mm}
 
-
 \linespread{1.0}
 
 \newcommand{\linia}{\rule{\linewidth}{0.5pt}}
@@ -40,18 +39,18 @@ bindingoffset=0mm, top=20mm,bottom=20mm}
 % my own titles
 \makeatletter
 \renewcommand{\maketitle}{
-\begin{center}
-\vspace{2ex}
-{\huge \textsc{\@title}}
-\vspace{1ex}
-\\
-\linia\\
-\@author \hfill \@date
-\vspace{4ex}
-\end{center}
+	\begin{center}
+	\vspace{2ex}
+	{\huge \textsc{\@title}}
+	\vspace{1ex}
+	\\
+	\linia\\
+	\@author \hfill \@date
+	\vspace{4ex}
+	\end{center}
 }
+
 \makeatother
-%%%
 
 % custom footers and headers
 \usepackage{fancyhdr,lastpage}
@@ -65,8 +64,6 @@ bindingoffset=0mm, top=20mm,bottom=20mm}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 %
-
-%%%----------%%%----------%%%----------%%%----------%%%
 
 \begin{document}
 
@@ -122,10 +119,7 @@ Donde $\lambda$ es la densidad lineal, $\sigma$ la densidad superficial y $\rho$
 \vec{r}_{cm} &= \frac{1}{M_T} \int \vec{r} \rho\; dV 
 \end{align*}
 
-
 \textbf{Sistema de múltiples distribuciones continuas:}\\
-
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\linewidth]{muchos3d}
@@ -135,9 +129,7 @@ El centro de masa para un sistema de $N$ objetos de distribución continua está
 
 $$ \vec{r}_{cm} = \frac{1}{M_{T}}\sum_{k=1}^{N} m_k \vec{r}_k = \frac{m_1\vec{r}_1 + \dots + m_N \vec{r}_N}{m_1 + \dots + m_N}$$
 
-
 Donde $ \vec{r}_k$ es el centro de masa de el k-ésimo elemento y $m_k$ su masa. $M_T$ es la suma de todas las masas.
-
 
 \subsection{Lamina de densidad uniforme} 
 
@@ -147,7 +139,6 @@ de la lamina está repartida de manera uniforme en toda su superficie.
 	\includegraphics[width=0.7\linewidth]{4}
 	\label{fcN4}
 \end{figure}
-
 
 Para ello se utiliza la siguiente estrategia: se encuentra el centro de masa de dos rectángulos.
 
@@ -185,7 +176,6 @@ Es decir:
  &=  \frac{2b-d}{2}\hat{i} + \frac{c}{2}\hat{j} 
 \end{align*}
 
-
 Ahora el centro de masa de la figura entera esta dado por:
 
 $$ \vec{r}_{cm} = \frac{ M_v \vec{r}_v+ M_a \vec{r}_a}{M_v + M_a}$$
@@ -199,12 +189,10 @@ M_a &= \sigma A_a
 
 Donde $A_v$ y $A_a$ son las áreas de los rectangulos verde y azul respectivamente. Por lo tanto el centro de masa esta dado por:
 
-
 \begin{align*}
  \vec{r}_{cm} &= \frac{ \sigma A_v \vec{r}_v+ \sigma A_a \vec{r}_a}{\sigma A_v + \sigma A_a} \\
  & = \frac{  A_v \vec{r}_v+  A_a \vec{r}_a}{ A_v +  A_a}
 \end{align*}
-
 
 Las áreas respectivas son:
 
@@ -224,7 +212,6 @@ Por lo que el centro de masa se convierte en:
 
 Es decir:
 
-
 \begin{align*}
 X_{cm}  &= \frac{1}{2} \frac{   (2db-d^2)c +a(b-d)^2 }{ dc + (b-d)a}\\
 Y_{cm}&= \frac{1}{2} \frac{   (dc^2+ba^2-da^2)\hat{j}}{ dc + (b-d)a}\\
@@ -232,16 +219,13 @@ Y_{cm}&= \frac{1}{2} \frac{   (dc^2+ba^2-da^2)\hat{j}}{ dc + (b-d)a}\\
 
 \section{Momentos de inercia}
 
-
 \textbf{Partículas puntuales:}
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.4\linewidth]{rot1}
 	\caption{Eje negro y las distancias en morado de las partículas al eje.}
 	\label{fcN4}
 \end{figure}
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\linewidth]{rot2}
@@ -293,9 +277,6 @@ I &=  \int r^2 \rho\; dV
 Para calcular el momento de inercia de un anillo con respecto a un eje que pasa por el centro del anillo, perpendicular al plano donde este se encuentra, se debe hacer la siguiente integral:
 
 $$ I = \int r^2 dm$$
-
-
-
 
 El elemento de masa lo podemos expresar en términos del "volumen"(entre comillas ya que como el anillo es una figura de 1D, se considera su longitud y no volumen):
 
@@ -368,8 +349,6 @@ $$ dA = L dx = 2 \pi r d r$$
  
 $$ I = \int \sigma r^2 2 \pi r dx$$
 
-
-
 Recordando que la integral suma sobre todos los anillos, tenemos que variar $r$ desde el origen hasta el extremo del disco. Es decir que $r$ debe ir desde $0$ hasta $R$. Estos son entonces los limites de la integral:
 
 
@@ -380,8 +359,6 @@ Como $\sigma$ y $2\pi$ son constantes, salen de la integral y se tiene:
 $$ I =  2\pi\sigma \int_{0}^{R}    r^3 dr$$
 
 Esta integral es:
-
-
 
 $$ I =  2\pi\sigma \left( \frac{1}{4} R^4\right)$$
 
@@ -397,16 +374,12 @@ $$ I = \frac{1}{2} m R^2$$
 
 \subsection{Cilindro de densidad uniforme}
 
-
-
 \begin{figure}[h]
 	\includegraphics[width=0.5\linewidth]{cilindro1}
 	\label{fcN4}
 \end{figure}
 
 Se va a calcular el momento de inercia de un cilindro de masa $M$ distribuida uniforme. Este momento de inercia se calcula con respecto a un eje que atraviesa el cilindro por el centro de masa (el centro) y perpendicular a las caras circulares del cilindro.
-
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\linewidth]{cilindro2}
@@ -418,7 +391,6 @@ Para calcular el momento de inercia del disco vamos a dividir el cilindro en dis
 $$ dI = \frac{1}{2} r^2 dm_d $$
 
 Donde $dm_d$ es la masa de cada disco que vamos a sumar y $r$ el radio de cada disco. Como es un cilindro todos los discos tienen el mismo radio $R$. La integral se encarga de sumar cada disco con grosor infinitesimal. Por lo tanto el momento de inercia esta dado por:
-
 
 $$ I = \int d I  = \frac{1}{2} \int R^2 dm_a $$
 
@@ -432,9 +404,7 @@ $$ I = \frac{1}{2} M R^2$$
 
 Es el mismo que el del disco, solo que con la masa del cilindro. 
 
-
 \subsection{Bola de densidad uniforme}
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\linewidth]{bola1}
@@ -459,15 +429,9 @@ Donde $dm_c$ es la masa de cada cilindro que vamos a sumar y $r$ el radio de cad
 
 $$ I = \int d I  = \frac{1}{2}\int r^2 dm_c $$
 
-
-
-
- Para integrar cambiamos $dm_c$ usando la siguiente relación:
-
+Para integrar cambiamos $dm_c$ usando la siguiente relación:
 
 $$ dm_c = \rho dV$$
-
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.7\linewidth]{elmentovolbola}
@@ -479,9 +443,9 @@ Donde $dV$ es el volumen de cada cilindro infinitesimal. Vemos que el volumen de
 
 $$ dV = A dy = \pi r^2 d y$$
 
- Juntando estos resultados el momento de inercia está dado por la siguiente expresión:
+Juntando estos resultados el momento de inercia está dado por la siguiente expresión:
  
- $$ I = \frac{1}{2} \int \rho r^2 \pi r^2 dy$$
+$$ I = \frac{1}{2} \int \rho r^2 \pi r^2 dy$$
 
 Ahora, para poder integrar esta expresión, tenemos que encontrar como depende el radio de los cilindros en función de la altura $y$. Usando el teorema de Pitágoras tenemos que:
 
@@ -489,7 +453,7 @@ $$ r^2 = R^2 - y^2$$
 
 Por lo tanto el momento de inercia está dado por:
 
- $$ I = \frac{1}{2} \int \rho \pi   (R^2-y^2)^2 dy$$
+$$ I = \frac{1}{2} \int \rho \pi   (R^2-y^2)^2 dy$$
 
 Recordando que la integral suma sobre todos los cilindros, tenemos que variar $y$ desde la parte inferior de la bola hasta la superior. Es decir que $y$ debe ir desde $-R$ hasta $R$. Estos son entonces los limites de la integral:
 
@@ -507,7 +471,6 @@ $$ (R^2-y^2)^2 = R^4 -2 R^2 y^2 + y^4$$
 
 Por lo que:
 
-
 $$ I = \frac{1}{2} \rho \pi \int_{-R}^{R}  R^4 -2 R^2 y^2 + y^4   dy$$
 
 Ahora usamos la propiedad de que la integral de una suma es la suma de las integrales:
@@ -517,9 +480,7 @@ La integral de un monomio esta dada por:
 
 $$ \int_{a}^{b} x^{n} dx = \left.\frac{x^{n+1}}{n+1}\right|_{a}^{b} = \frac{b^{n+1}}{n+1} - \frac{a^{n+1}}{n+1}$$
 
-
 Por lo que el momento de inercia es:
-
 
 \begin{align*}
 I &= \frac{1}{2} \rho \pi \left(  R^4(R-(-R))  -2 R^2 \left( \frac{R^3}{3}-\frac{(-R)^3}{3}\right)  + \left( \frac{R^5}{5}-\frac{(-R)^5}{5}\right)\right) \\
@@ -530,19 +491,13 @@ I & = \frac{8}{15} \rho \pi R^5
 
 La densidad de una bola es:
 
-$$ \rho = \frac{M}{V} = \frac{M}{
-	\frac{4}{3} \pi R^3}$$
+$$ \rho = \frac{M}{V} = \frac{M}{\frac{4}{3} \pi R^3}$$
 
 Por lo que finalmente se tiene que el momento de inercia de una bola es:
 
-$$ I= \frac{8}{15} \frac{M}{
-	\frac{4}{3} \pi R^3} \pi R^5 =  \frac{2}{5} M R^2$$
-
+$$ I= \frac{8}{15} \frac{M}{\frac{4}{3} \pi R^3} \pi R^5 =  \frac{2}{5} M R^2$$
 
 Calcule el momento de inercia de un disco con distribución de masa uniforme de radio $R$ con respecto al eje perpendicular al disco que pasa por su centro de masa. 
-
-
-
 
 \section{Teorema de ejes paralelos}
 
@@ -561,8 +516,6 @@ El teorema de ejes paralelos da un formula para calcular el momento de inercia d
 El eje de la barra se encuentra a una distancia $L/2$ de un eje que es paralelo y pasa por el centro de masa. Por lo que por el teorema de ejes paralelos se tiene que el momento de inercia esta dado por la siguiente expresión:
 
 $$ I = I_{cm} + m \left(\frac{L}{2}\right)^2$$
-
-
 
 El momento con respecto al eje que pasa por el centro de masa es $I_{cm} =\frac{1}{12} m L^2$. Entonces el momento de inercia es:
 
@@ -583,18 +536,12 @@ El momento con respecto al eje que pasa por el centro de masa es $I_{cm} =\frac{
 
 $$ I = \frac{7}{5} m R^2$$
 
-
-
 \subsection{Discos}
-
-
-
 
 \begin{figure}[h]
 	\includegraphics[width=0.4\linewidth]{parelelodiscos}
 	\label{fcN4}
 \end{figure}
-
 
 En este ejemplo se tiene 5 discos de masa $m$ distribuida uniforme y todos con mismo radio. Se quiere encontrar el momento de inercia con respecto a un eje que atraviesa el disco central por justo en el centro. Para hacerlo sumamos el momento de inercia de los 5 discos con respecto a dicho eje. Es decir:
 
@@ -617,7 +564,5 @@ I &= I_1 + 4 I_2 \\
 &= \frac{1}{2} mR^2 + 4 \left(\frac{9}{2} m R^2\right)\\
 & = \frac{37}{2} m R^2 
 \end{align*}
-
-
 
 \end{document}

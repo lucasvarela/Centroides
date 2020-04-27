@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.17)  27 APR 2020 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.17)  27 APR 2020 17:08
 entering extended mode
-**./Momentosdeinercia.tex
-(Momentosdeinercia.tex
+**./Centro_Masa_Momento_Inercia.tex
+(Centro_Masa_Momento_Inercia.tex
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Users\lucas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -920,8 +920,8 @@ s
 ("C:\Users\lucas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lastpage\lastpage.
 sty"
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
-) (Momentosdeinercia.aux)
-\openout1 = `Momentosdeinercia.aux'.
+) (Centro_Masa_Momento_Inercia.aux)
+\openout1 = `Centro_Masa_Momento_Inercia.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
@@ -991,12 +991,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 65.
 LaTeX Info: Redefining \pageref on input line 65.
 LaTeX Info: Redefining \nameref on input line 65.
- (Momentosdeinercia.out) (Momentosdeinercia.out)
+ (Centro_Masa_Momento_Inercia.out)
+(Centro_Masa_Momento_Inercia.out)
 \@outlinefile=\write4
-\openout4 = `Momentosdeinercia.out'.
+\openout4 = `Centro_Masa_Momento_Inercia.out'.
 
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -1037,7 +1037,7 @@ Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 65.
-(Momentosdeinercia.toc
+(Centro_Masa_Momento_Inercia.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
 
 ("C:\Users\lucas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -1048,7 +1048,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
-\openout5 = `Momentosdeinercia.toc'.
+\openout5 = `Centro_Masa_Momento_Inercia.toc'.
 
 <./im/masaspuntuales.png, id=61, 380.17032pt x 248.42813pt>
 File: ./im/masaspuntuales.png Graphic file (type png)
@@ -1311,20 +1311,21 @@ AED: lastpage setting LastPage
 [12 <./im/numerados.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 583.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 583.
- (Momentosdeinercia.aux)
+ (Centro_Masa_Momento_Inercia.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 583.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 583.
-Package rerunfilecheck Info: File `Momentosdeinercia.out' has not changed.
+Package rerunfilecheck Info: File `Centro_Masa_Momento_Inercia.out' has not cha
+nged.
 (rerunfilecheck)             Checksum: 13D63B995B720B39A6F1ED67DC058924;850.
  ) 
 Here is how much of TeX's memory you used:
  18871 strings out of 492973
- 349011 string characters out of 3126692
+ 349171 string characters out of 3126692
  419018 words of memory out of 3000000
  22332 multiletter control sequences out of 15000+200000
  32099 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,54p,827b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,54p,837b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/lucas/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-
 ec.enc}{C:/Users/lucas/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/tex-gy
 re/q-ec-sc.enc}<C:/Users/lucas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
@@ -1338,7 +1339,7 @@ msy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/tex-gyre/qtmb.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/tex-gyre/qtmr.pfb>
-Output written on Momentosdeinercia.pdf (12 pages, 344866 bytes).
+Output written on Centro_Masa_Momento_Inercia.pdf (12 pages, 345016 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  56 named destinations out of 1000 (max. 500000)

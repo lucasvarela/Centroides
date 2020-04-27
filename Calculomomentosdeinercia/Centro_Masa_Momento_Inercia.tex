@@ -142,7 +142,7 @@ El centro de masa para un sistema de $N$ objetos de distribución continua está
 
 
 
-Donde $ \vec{r}_k$ es el centro de masa de el k-ésimo elemento y $m_k$ su masa. $M$ es la suma de todas las masas.
+Donde $ \vec{r}_k$ es el centro de masa del k-ésimo elemento y $m_k$ su masa.
 
 
 \subsection{Ejemplo: Lamina de densidad uniforme} 
@@ -238,11 +238,83 @@ Y_{cm}&= \frac{1}{2} \frac{   (dc^2+ba^2-da^2)\hat{j}}{ dc + (b-d)a}\\
 \end{align*}
 
 
+\subsection{Ejemplo 2: Triángulo equilátero}
 
 
 
+\begin{wrapfigure}{r}{3.0cm}
+	\includegraphics[scale=0.5]{./im/tri}
+\end{wrapfigure}
+\textbf{Método 1: Integral Doble }\\
+
+Tome el marco de referencia como se muestra en la figura. Debido a la simetría del triangulo intuimos que en $x$ tenemos $x_{\text{cm}} = 0$ (lo demostraremos pero es bueno tener la intuición del resultado que esperamos). La región de integración está definida por las siguientes ecuaciones:
 
 
+\begin{align*}
+  -\frac{a}{2} \leq &x \leq \frac{a}{2}\\
+ 0 \leq &y \leq \left(\frac{a}{2} - |x|\right) \tan 60^{\circ}
+\end{align*}
+
+La expresión para calcular $y_{\text{cm}}$ es:
+
+
+\begin{equation*}
+\label{3} y_{\text{cm}} = \frac{1}{A} \int_{-a/2}^{a/2} \int_{0}^{ \left(\frac{a}{2} - |x|\right) \tan 60^{\circ}}   y\; dy dx
+\end{equation*}
+
+Se desarrolla la integral doble
+\begin{equation*}
+\label{4}  \int_{-a/2}^{a/2} \int_{0}^{ \left(\frac{a}{2} - |x|\right) \tan 60^{\circ}}   y\; dy dx = \frac{1}{2} \int_{-a/2}^{a/2} \left(\frac{a}{2} - |x|\right)^2 (\tan 60^{\circ})^2 dx = \frac{3}{2} \int_{-a/2}^{a/2} \left(\frac{a}{2} - |x|\right)^2  dx
+\end{equation*}
+
+
+Donde se usó $(\tan 60^{\circ})^2 = 3$. Se observa que el integrando es una función par por lo que se tiene:
+
+
+
+\begin{equation*}
+ \frac{3}{2} \int_{-a/2}^{a/2} \left(\frac{a}{2} - |x|\right)^2  dx = 3 \int_{0}^{a/2} \left(\frac{a}{2} - |x|\right)^2  dx =  3 \int_{0}^{a/2} \left(\frac{a}{2} - x\right)^2  dx
+\end{equation*}
+
+Usando el cambio de variable $u = \frac{a}{2} - x$ se obtiene:
+
+
+\begin{equation*}
+3 \int_{0}^{a/2} \left(\frac{a}{2} - x\right)^2  dx =  3 \int_{0}^{a/2} u^2 du = \frac{a^3}{8}
+\end{equation*}
+
+Por lo que finalmente se obtiene el centro de masa dividiendo por el área que es $A = \frac{\sqrt{3}}{4}a^2$:
+
+
+\begin{equation*}
+ y_{\text{cm}} = \frac{a}{2 \sqrt{3}}
+\end{equation*}
+
+Para la posición en $x$ del centro de masa (ya la sabemos pero verificamos el resultado):
+
+
+
+\begin{equation*}
+x_{\text{cm}} = \frac{1}{A} \int_{-a/2}^{a/2} \int_{0}^{ \left(\frac{a}{2} - |x|\right) \tan 60^{\circ}}   x\; dy dx = \frac{1}{A} \int_{-a/2}^{a/2}   \left(\frac{a}{2} - |x|\right)  x \tan 60^{\circ}\;  dx = 0
+\end{equation*}
+
+Donde se usó que la ultima integral tiene integrando impar. El centro de masa es:
+
+\begin{equation}
+\vec{\boldsymbol{r}}_{\text{cm}} =  \frac{a}{2 \sqrt{3}} \hat{\boldsymbol{\jmath}}
+\end{equation}
+
+\textbf{Método 2: Una sola Integral}\\
+
+
+El problema se puede pensar como sumar rectángulos de ancho infinitesimal. El área de cada rectángulo es $dA = 2x' dy$, donde $x'$ es dado por $x'= a/2 - x$ y $x' \tan 60^{\circ} = y$. Es decir $x'$ es una distancia sobre una cara del triangulo equilátero, medida desde un vértice. $x$ es la distancia del centro de esa cara del triangulo al punto $x'$. Entonces $2x$ es el largo de nuestros rectángulos a integrar. La altura corre desde $0$ hasta la altura del triangulo, $\sqrt{3}a/4$. Por lo que la doble integral se reduce a la siguiente simple integral:  
+
+
+\begin{equation*}
+ y_{\text{cm}} = \frac{1}{A} \int_{0}^{\frac{\sqrt{3}}{2}a}  \left( a - \frac{2 y}{\tan 60^{\circ}} \right) y \; dy = \frac{a}{2\sqrt{3}}
+\end{equation*}
+
+\pagebreak
 \section{Momentos de inercia}
 
 \textbf{Partículas puntuales:}

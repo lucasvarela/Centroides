@@ -4,11 +4,11 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
+\usepackage{float}
 \usepackage{xcolor}
 \usepackage{parskip}
 \usepackage{tgtermes}
-\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{graphicx,wrapfig}
 \usepackage[
 pdftitle={Math Assignment}, 
 pdfauthor={Lucas Varela, Universidad de los Andes},
@@ -18,6 +18,11 @@ bookmarksopenlevel=2]{hyperref}
 \usepackage{enumerate}
 \usepackage{multicol}
 \usepackage{tikz}
+\definecolor{pr}{HTML}{FF6961}
+\definecolor{pb}{HTML}{779ecb}
+\usepackage{hyperref}
+
+\definecolor{pg}{HTML}{77DD77}
 
 \usepackage{geometry}
 \geometry{total={210mm,297mm},
@@ -30,12 +35,7 @@ bindingoffset=0mm, top=20mm,bottom=20mm}
 \newcommand{\linia}{\rule{\linewidth}{0.5pt}}
 
 % custom theorems if needed
-\newtheoremstyle{mytheor}
-    {1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
-    {{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
 
-\theoremstyle{mytheor}
-\newtheorem{defi}{Definition}
 
 % my own titles
 \makeatletter
@@ -70,141 +70,132 @@ bindingoffset=0mm, top=20mm,bottom=20mm}
 
 \begin{document}
 
-\title{Complementaria de Física I -- Taller Semana 11}
+\title{Solución problema Kleppner 4.23}
 
-\author{Universidad de los Andes}
+\author{Física I}
 
 \date{}
 
 \maketitle
 
 \color{blue}
+\setlength\intextsep{-10pt}
+
+
+\begin{wrapfigure}{r}{3.0cm}
+	\includegraphics[scale=0.7]{./im/1}
+\end{wrapfigure}
 
 
 
 
-\begin{figure}[h]
-	\includegraphics[width=.2\linewidth]{1}
-	\label{fcN4}
-\end{figure}
 
-
-
-\color{blue}
-\paragraph{Kleppner 4.23} Una bola de masa $M$ y otra de masa $m$ se sueltan juntas desde una altura $h$ del suelo ($h$ se mide desde el suelo hasta el punto de contacto entre las bolas). Encuentre la altura máxima que alcanza la bola pequeña sabiendo que $m$ es mucho menos masiva que $M$ ($m\ll M$). Suponga que todas las colisiones son elásticas.
+\color{pb}
+\textbf{Kleppner 4.23} \color{black} Una bola de masa $M$ y otra de masa $m$ se sueltan juntas desde una altura $h$ del suelo ($h$ se mide desde el suelo hasta el punto de contacto entre las bolas). Encuentre la altura máxima que alcanza la bola pequeña sabiendo que $m$ es mucho menos masiva que $M$ ($m\ll M$). Suponga que todas las colisiones son elásticas.
 
 
 
 
-\color{black}
-
+\begin{center}
+	\color{pb}
 \textbf{Solución}
-
-Primero calculemos con cuanta velocidad llega la pelota al suelo. Al ser caída libre se encuentra por conservación de energía que la velocidad con la que llega es:
+\color{black}
+\end{center}
+Primero se calcula la rapidez de la pelota al llegar al suelo. Para una caída libre conocemos la rapidez en función de la altura desde que se suelta $h$:
 
 $$v^2 = 2gh$$
 
 
-Esta también es la velocidad con la que llega la pelota pequeña (recuerde que en caída libre la velocidad final no depende de la masa). Ahora como la colisión con el piso es elástica, la energía antes y después de la colisión es la misma, por lo que la pelota $M$ rebota y sale con la misma rapidez pero con la dirección opuesta. Entonces vemos que después de que la pelota $M$ rebota se tiene la siguiente situación mostrada en el dibujo.
+Esta también es la rapidez con la que llega la pelota pequeña (recuerde que en caída libre la velocidad final no depende de la masa). Ahora como la colisión con el piso es elástica, la energía antes y después de la colisión es la misma, por lo que la pelota $M$ rebota y sale con la misma rapidez pero con la dirección opuesta. Entonces vemos que después de que la pelota $M$ rebota se tiene la siguiente situación mostrada en el dibujo.
 
+\vspace{1cm}
 
-\begin{figure}[h]
-	\includegraphics[width=.3\linewidth]{2}
-	\label{fcN4}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./im/2}
+	\caption{Justo antes y después de la colisión entre las bolas. En el momento justo antes la bola grande ya rebotó con en el piso.}
 \end{figure}
 
-Entonces ambas pelotas se mueven con la misma rapidez pero la dirección contraria. Por lo tanto justo antes de la colisión entre las bolas se tiene el siguiente momento lineal en la dirección $y$:
+\vspace{0.5cm}
 
-$$ p_{y_i} = M v - m v = (M-m)v$$
+Entonces ambas pelotas se mueven con la misma rapidez y dirección opuesta. Por lo tanto justo antes de la colisión entre las bolas se tiene el siguiente momento lineal en la dirección $y$:
 
-y la energía es:
+$$ p_{i} = M v - m v = (M-m)v$$
 
-$$ E_i= \frac{1}{2} M v^2 + \frac{1}{2} m v^2 = \frac{1}{2} (M+m) v^2 $$
+Y justo después:
 
-Ahora miremos justo después de la colisión que pasa.
-
-\begin{figure}[h]
-	\includegraphics[width=.3\linewidth]{3}
-	\label{fcN4}
-\end{figure}
-
-Después de la colisión se tiene el siguiente momento lineal en $y$:
+\begin{equation}
+p_f = M v_M + m v_m
+\end{equation}
 
 
-$$ p_{y_f} = M v_M + m v_m $$
 
-Y la siguiente energía
-$$ E_f= \frac{1}{2} M v_M^2 + \frac{1}{2} m v_m^2 $$
+Dado que es una colisión elástica rectilínea, tenemos la siguiente relación para la velocidad relativa antes y después de la colisión:
 
-Como se esta mirando el momento justo antes y justo después de la colisión, la gravedad no tiene tiempo para cambiar el momento lineal en $y$ y se tiene que $p_{y_f} = p_{y_i} $. De esto sigue que:
+\begin{equation}
+v_{M_i} -v_{m_i} = -(v_{M_f} -v_{m_f})
+\end{equation}
 
-$$ (M-m)v = M v_M + m v_m $$
+Se reemplaza en la ecuación anterior las velocidades que se conocen:
 
+\begin{equation}
+v - (-v) = -(v_M - v_m)
+\end{equation}
 
-Nos interesa saber $v_m$ por lo que despejamos $v_M$ en términos de dicha cantidad:
+y se despeja $v_M$:
 
+\begin{equation}
+v_M = v_m - 2v \label{vM}
+\end{equation}
 
-$$  v_M =  \left(1-\frac{m}{M}\right)v -  \frac{m}{M} v_m $$
+Para despejar $v_m$ necesitamos otra ecuación que sale de plantear la conservación del momento lineal:
 
+\begin{equation}
+(M-m)v = M v_M + m v_m
+\end{equation}
 
-Ahora como suponemos este choque también fue elástico, se conserva la energía, es decir $E_f = E_i$ por lo que se tiene:
+Reemplazamos la expresión para $v_M$ (ecuación \ref{vM}) en la relación anterior para despejar $v_m$:
 
-$$ \frac{1}{2} (M+m) v^2 = \frac{1}{2} M v_M^2 + \frac{1}{2} m v_m^2 $$
-
-O multiplicando por 2:
-
-$$  (M+m) v^2 =  M v_M^2 +  m v_m^2 $$
-
-
-Ahora calculamos $v_M^2$ con la expresión que obtuvimos de conservación de momento.
 
 
 \begin{align*}
-v_M^2 & = \left( \left(1-\frac{m}{M}\right)v -  \frac{m}{M} v_m \right)^2 \\
-& =    \left(1-\frac{m}{M}\right)^2v^2 -2\frac{m}{M} \left(1-\frac{m}{M}\right) v v_m + \frac{m^2}{M^2} v_m^2\\
-& = v^2 - 2\frac{m}{M} v^2 + \frac{m^2}{M^2}v^2 - 2\frac{m}{M} v v_m + 2\frac{m^2}{M^2} v v_m  + \frac{m^2}{M^2} v_m^2
+(M-m)v = M (v_m - 2v) + m v_m\\
+(M-m)v = Mv_m - 2Mv + m v_m\\
+(3M-m)v = (M+m) v_m
 \end{align*}
 
-Ahora usamos la suposición que $M$ es mucho más grande que $m$. Si esto pasa entonces $m/M$ es muy pequeño y $m^2/M^2$ aun más pequeño. Por lo tanto vamos a hacer la aproximación $m^2/M^2 \approx 0$. Por lo tanto se tiene que:
 
 
-$$ v_M^2 \approx v^2 -  2\frac{m}{M} v^2 - 2\frac{m}{M} v v_m $$
+Finalmente se obtiene:
 
-Reemplazando esto en la ecuación de conservación de energía:
+\begin{equation}
+v_m = \frac{3M-m}{M+m} v
+\end{equation}
 
+Si miramos $M \gg m$, podemos simplificar la expresión anterior aún más. Podemos decir que ya que $M$ es mucho más grande que $m$, se tiene que $m/M \approx 0$. Veamos que implica eso en nuestra expresión para $v_m$:
 
+\begin{equation}
+v_m = \frac{3M-m}{M+m} v =  \frac{M}{M}\frac{3-m/M}{1+m/M} v \approx 3 v
+\end{equation}
 
-$$  (M+m) v^2 =  M  \left(v^2 -  2\frac{m}{M} v^2 - 2\frac{m}{M} v v_m\right) +  m v_m^2 $$
+La pelota pequeña sale disparada con una rapidez $3v$ que nos da una altura final $h_f$:
 
-Simplificando:
+\begin{equation}
+h_f = \frac{v_m^2}{2g} = 9\frac{v^2}{2g} =  9 h
+\end{equation}
 
-$$  (M+m) v^2 =  M  v^2 -  2m v^2 - 2m v v_m +  m v_m^2 $$
-
-Y simplificando aun más:
-
-
-$$ v_m^2 - 2 v v_m  - 3v^2 = 0$$
-
-
-Las soluciones para ésta cuadrática son:
-
-
-$$ v_m = {v \pm 2 v} $$
+El resultado anterior puede parecer equivocado pero podemos confirmar su veracidad con un experimento:
 
 
-Pero no tiene sentido que la pelota salga con velocidad negativa por lo que se tiene una velocidad final para $m$ dada por:
+\url{https://youtu.be/2UHS883_P60?t=106}
 
 
-$$ v_m = 3v$$
+\vspace{1cm}
 
-Ahora usando conservación de energía, se tiene que la energía cuando la pelota llegue a su altura máxima sera solo potencial $E = mg H$. Su energía justo después del choque es solo cinética $E = 1/2 m v_m^2$. Por lo tanto:
-
-$$ H = \frac{v^2_m}{2g} = \frac{9 v^2}{2g} = 9h$$
-
-
-\begin{figure}[h]
-	\includegraphics[width=.23\linewidth]{4}
-	\label{fcN4}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{./im/girl1}
+	\caption{Justo antes y después de la colisión entre las bolas. La pelota pequeña alcanza una gran altura. En este experimento claramente no se alcanza nueve veces la altura original y esto se debe a la fricción con el aire y que la colisión no fue perfectamente rectilíneo (note que la pelota de tenis no está alienada con la pelota de baloncesto. Finalmente, en este caso se tiene $m/M \approx 0.09$ y si tomamos eso en cuenta la altura final disminuye a aproximadamente $7h$. Imágenes tomadas del vídeo de Physics Girl: \url{https://youtu.be/2UHS883_P60?t=106}}
 \end{figure}
 
 
